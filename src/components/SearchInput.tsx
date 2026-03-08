@@ -1,6 +1,5 @@
 import { useState, FormEvent } from 'react';
 import { Search, Globe, Server } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
@@ -20,12 +19,7 @@ export const SearchInput = ({ onSearch, isLoading }: SearchInputProps) => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="w-full max-w-2xl mx-auto"
-    >
+    <div className="w-full max-w-2xl mx-auto animate-fade-in">
       <form onSubmit={handleSubmit} className="relative">
         <div className="glass-card rounded-xl p-1.5 glow-border">
           <div className="flex items-center gap-2">
@@ -33,28 +27,26 @@ export const SearchInput = ({ onSearch, isLoading }: SearchInputProps) => {
               <Globe className="w-5 h-5" />
               <span className="text-sm font-mono hidden sm:inline">//</span>
             </div>
-            
+
             <Input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Enter IP address or domain name..."
+              name="network-query"
               className="flex-1 bg-transparent border-0 text-foreground placeholder:text-muted-foreground focus-visible:ring-0 font-mono text-base"
               disabled={isLoading}
             />
-            
+
             <Button
               type="submit"
               disabled={!query.trim() || isLoading}
               className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg px-6 font-medium transition-all duration-200 disabled:opacity-50"
             >
               {isLoading ? (
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                >
+                <div className="animate-spin">
                   <Server className="w-5 h-5" />
-                </motion.div>
+                </div>
               ) : (
                 <Search className="w-5 h-5" />
               )}
@@ -63,7 +55,7 @@ export const SearchInput = ({ onSearch, isLoading }: SearchInputProps) => {
           </div>
         </div>
       </form>
-      
+
       <div className="flex justify-center gap-4 mt-4 text-sm text-muted-foreground">
         <button
           type="button"
@@ -89,6 +81,6 @@ export const SearchInput = ({ onSearch, isLoading }: SearchInputProps) => {
           github.com
         </button>
       </div>
-    </motion.div>
+    </div>
   );
 };
