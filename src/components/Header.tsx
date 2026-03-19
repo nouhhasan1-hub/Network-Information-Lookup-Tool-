@@ -8,7 +8,7 @@ export const Header = () => {
           <Radar className="w-10 h-10 text-primary" />
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-          <span className="text-gradient">Network</span> Intel
+          <span className="text-gradient">Network</span> Lookup
         </h1>
         <Network className="w-10 h-10 text-primary" />
       </div>
