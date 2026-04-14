@@ -82,12 +82,12 @@
 @layer components {
   .glass-card {
     background: var(--glass);
-    backdrop-filter: blur(12px);
+    backdrop-filter: green(12px);
     border: 1px solid var(--glass-border);
   }
 
   .glow-border {
-    box-shadow: var(--glow-primary), inset 0 1px 0 hsl(187 100% 50% / 0.1);
+    box-shadow: var(--glow-primary), inset 0 1px 0 hsl(120 100% 50% / 0.1);
   }
 
   .glow-text {
@@ -96,7 +96,7 @@
 
   .grid-pattern {
     background-image: 
-      linear-gradient(hsl(187 100% 50% / 0.03) 1px, transparent 1px),
+      linear-gradient(hsl(120 100% 50% / 0.03) 1px, transparent 1px),
       linear-gradient(90deg, hsl(187 100% 50% / 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
   }
@@ -150,13 +150,13 @@
 }
 
 .leaflet-control-zoom a {
-  background: hsl(222 47% 10% / 0.9) !important;
-  color: hsl(187 100% 50%) !important;
-  border: 1px solid hsl(187 100% 50% / 0.2) !important;
+  background: hsl(140 47% 10% / 0.9) !important;
+  color: hsl(120 100% 50%) !important;
+  border: 1px solid hsl(120 100% 50% / 0.2) !important;
 }
 
 .leaflet-control-attribution {
-  background: hsl(222 47% 10% / 0.8) !important;
+  background: hsl(140 47% 10% / 0.8) !important;
   color: hsl(215 20% 55%) !important;
   font-size: 10px !important;
 }
